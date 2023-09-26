@@ -1,0 +1,16 @@
+{
+    "manifest_version":3,
+    "name":"auto_login_ccu_network",
+    "description":"testing",
+    "version":"0",
+    "icons":{"16":"img/drunk.jpg","256":"img/drunk.jpg"},
+    "action":{"default_icon":"img/drunk.jpg","default_title": "Click Me", "default_popup": "popup/popup.html"},
+    "background":{"service_worker":"test.js"},
+    "content_scripts":[{"matches":["https://wlc.ccu.edu.tw/*","https://cloudpath.ccu.edu.tw/*","https://jamessu1201.github.io/*"],
+    "js":["content_script.js"]}],
+    "permissions": ["activeTab", "declarativeContent", "storage","tabs"],
+    "web_accessible_resources": [{
+        "matches": ["https://wlc.ccu.edu.tw/*","https://cloudpath.ccu.edu.tw/*","https://jamessu1201.github.io/*"],
+        "resources": ["popup/popup.js"]
+    }]
+}
